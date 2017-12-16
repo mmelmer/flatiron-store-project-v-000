@@ -30,6 +30,7 @@ describe 'Feature Test: Cart', :type => :feature do
        click_button("Checkout")
 
        expect(page.current_path).to eq(cart_path(@current_cart))
+       #binding.pry
        expect(page).to_not have_button("Checkout")
      end
 
@@ -125,6 +126,7 @@ describe 'Feature Test: Cart', :type => :feature do
           click_button("Add to Cart")
         end
         @user.reload
+        #binding.pry
         expect(@user.current_cart.items).to include(first_item)
       end
 
